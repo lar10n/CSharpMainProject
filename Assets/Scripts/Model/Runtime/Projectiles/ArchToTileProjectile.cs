@@ -29,9 +29,9 @@ namespace Model.Runtime.Projectiles
             float maxHeight = totalDistance * 0.60f;
 
             float a = -(t * 2 - 1);
-            float b = (t * 2 - 1) + 1;
+            float b = (t * 2 - 1);
 
-            Debug.Log (maxHeight * (a * b));
+            Debug.Log(maxHeight * (a * b) + 1);
 
             Height = localHeight;
             if (time > StartTime + _timeToTarget)
