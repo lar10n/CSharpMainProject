@@ -23,7 +23,6 @@ namespace Model.Runtime.Projectiles
             
             Pos = Vector2.Lerp(StartPoint, _target, t);
             
-            float localHeight = 0f;
             float totalDistance = _totalDistance;
 
             float maxHeight = totalDistance * 0.60f;
@@ -31,7 +30,7 @@ namespace Model.Runtime.Projectiles
             float a = -(t * 2 - 1);
             float b = (t * 2 - 1);
 
-            Debug.Log(maxHeight * (a * b) + 1);
+            float localHeight = maxHeight * (a * b) + 1f;
 
             Height = localHeight;
             if (time > StartTime + _timeToTarget)
