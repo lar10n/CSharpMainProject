@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
+using GluonGui.Dialog;
 using Model.Runtime.Projectiles;
+using Unity.Plastic.Antlr3.Runtime.Tree;
+using UnityEditor;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace UnitBrains.Player
 {
@@ -16,12 +20,33 @@ namespace UnitBrains.Player
         protected override void GenerateProjectiles(Vector2Int forTarget, List<BaseProjectile> intoList)
         {
             float overheatTemperature = OverheatTemperature;
-            ///////////////////////////////////////
-            // Homework 1.3 (1st block, 3rd module)
-            ///////////////////////////////////////           
+            
+
+            float a = (_temperature = GetTemperature());
+
+            if (a < overheatTemperature)
+            {
+                int i = forTarget.x;
+                for (i = i - 1; i >= 0; i--)
+                {
+                    
+                }
+                
+              
+            }
+                if (a >= overheatTemperature) 
+                {
+                    IncreaseTemperature();
+                }
+
+
+
             var projectile = CreateProjectile(forTarget);
             AddProjectileToList(projectile, intoList);
-            ///////////////////////////////////////
+            
+             
+
+            
         }
 
         public override Vector2Int GetNextStep()
