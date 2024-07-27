@@ -29,7 +29,6 @@ namespace UnitBrains.Player
                 var projectile = CreateProjectile(forTarget);
                 AddProjectileToList(projectile, intoList);
             }
-            
         }
 
         public override Vector2Int GetNextStep()
@@ -39,9 +38,18 @@ namespace UnitBrains.Player
 
         protected override List<Vector2Int> SelectTargets()
         {
-            ///////////////////////////////////////
-            // Homework 1.4 (1st block, 4rd module)
-            ///////////////////////////////////////
+            
+            float[] Distance = { float.MinValue };
+
+            float min = float.MaxValue;
+
+            foreach (float f in Distance)
+            {
+                if (f < min) min = f;
+            }
+
+            var SelectTarget = new Vector2(min, min);
+
             List<Vector2Int> result = GetReachableTargets();
             while (result.Count > 1)
             {
